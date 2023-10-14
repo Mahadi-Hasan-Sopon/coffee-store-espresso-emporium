@@ -5,9 +5,10 @@
         "chef": "Barista John",
         "supplier": "CoffeeCo",
         "taste": "Strong and bold",
+        "price": 850,
         "category": "Espresso",
         "details": "A classic espresso, served black with a rich crema. Customize it with sugar, milk, or your favorite syrups. Pair it with a pastry or biscotti for the perfect coffee experience.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/mkxphPCs/1.png"
     },
     {
         "id": 2,
@@ -15,9 +16,10 @@
         "chef": "Barista Maria",
         "supplier": "BeanZone",
         "taste": "Creamy and frothy",
+        "price": 890,
         "category": "Cappuccino",
         "details": "Indulge in a velvety cappuccino, perfectly balanced with espresso, steamed milk, and a cloud of milk foam. You can choose to add sugar or cinnamon for that extra flavor kick.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/L5zCPm3Z/5.png"
     },
     {
         "id": 3,
@@ -25,19 +27,21 @@
         "chef": "Barista Robert",
         "supplier": "CoffeeHaven",
         "taste": "Smooth and mellow",
+        "price": 750,
         "category": "Latte",
         "details": "A latte is a delightful blend of espresso and steamed milk, finished with a light layer of foam. You can customize it with sugar, vanilla, or a shot of caramel syrup for a sweet twist.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/256KtRrP/2.png"
     },
     {
         "id": 4,
         "name": "Mocha",
         "chef": "Barista Laura",
         "supplier": "BeanMasters",
+        "price": 800,
         "taste": "Rich and chocolatey",
         "category": "Mocha",
         "details": "A mocha is a delightful combination of espresso, steamed milk, and cocoa. It's the perfect blend of coffee and chocolate. Add whipped cream and chocolate drizzle for an extra treat.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/8C00QKCs/3.png"
     },
     {
         "id": 5,
@@ -45,9 +49,10 @@
         "chef": "Barista Alex",
         "supplier": "CoffeeWorld",
         "taste": "Bold and smooth",
+        "price": 950,
         "category": "Americano",
         "details": "An Americano is made by diluting espresso with hot water, resulting in a smooth and full-bodied coffee. It's often enjoyed black but can be customized with cream and sugar.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/3R0bKXy1/4.png"
     },
     {
         "id": 6,
@@ -55,9 +60,10 @@
         "chef": "Barista Sarah",
         "supplier": "CaramelCafe",
         "taste": "Sweet and creamy",
+        "price": 880,
         "category": "Macchiato",
         "details": "A caramel macchiato is a sweet delight with espresso, steamed milk, and a drizzle of caramel syrup. It's perfect for those with a sweet tooth. Add extra caramel for more indulgence.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/256KtRrP/2.png"
     },
     {
         "id": 7,
@@ -65,9 +71,10 @@
         "chef": "Barista Hasan",
         "supplier": "IstanbulBeans",
         "taste": "Strong and aromatic",
+        "price": 750,
         "category": "Traditional",
         "details": "Turkish coffee is an age-old tradition, finely ground coffee brewed with water and sugar. It's known for its rich flavor and unique preparation method.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/XNFDmg67/6.png"
     },
     {
         "id": 8,
@@ -75,9 +82,10 @@
         "chef": "Barista Emily",
         "supplier": "ChillBeans",
         "taste": "Refreshing and cold",
+        "price": 680,
         "category": "Iced",
         "details": "Iced coffee is a cooling option made from brewed coffee, chilled and served over ice. Customize it with cream, sugar, or flavored syrups for a cool pick-me-up.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/3R0bKXy1/4.png"
     },
     {
         "id": 9,
@@ -85,19 +93,21 @@
         "chef": "Barista Pierre",
         "supplier": "LeCafé",
         "taste": "Full-bodied and earthy",
+        "price": 890,
         "category": "Brewed",
         "details": "French press coffee is known for its robust and earthy flavor. It's made by steeping coarsely ground coffee in hot water and then pressing the grounds to separate them.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/XNFDmg67/6.png"
     },
     {
         "id": 10,
         "name": "Decaf Espresso",
         "chef": "Barista Diane",
         "supplier": "Decaf Delights",
+        "price": 780,
         "taste": "Smooth and caffeine-free",
         "category": "Espresso",
         "details": "Decaf espresso offers all the bold flavor of espresso without the caffeine. Enjoy it as is or customize it with your choice of milk or sweeteners.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/L5zCPm3Z/5.png"
     },
     {
         "id": 11,
@@ -105,28 +115,31 @@
         "chef": "Barista Adam",
         "supplier": "Hazelnut Haven",
         "taste": "Nutty and aromatic",
+        "price": 860,
         "category": "Flavored",
         "details": "Hazelnut coffee is a delightful blend of coffee with the sweet, nutty essence of hazelnuts. It's perfect for those who enjoy a touch of natural flavor in their brew.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/mkxphPCs/1.png"
     },
     {
         "id": 12,
         "name": "Irish Coffee",
         "chef": "Barista Sean",
         "supplier": "Emerald Brews",
+        "price": 720,
         "taste": "Whiskey-infused warmth",
         "category": "Alcoholic",
         "details": "Irish coffee combines hot coffee with Irish whiskey and sugar, topped with whipped cream. It's a warm and indulgent cocktail perfect for chilly evenings.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/8C00QKCs/3.png"
     },
     {
         "id": 13,
         "name": "Coconut Mocha",
         "chef": "Barista Maria",
         "supplier": "TropicalBeans",
+        "price": 580,
         "taste": "Tropical and chocolatey",
         "category": "Mocha",
         "details": "Coconut mocha is a tropical twist on the classic mocha, blending coffee, cocoa, and the sweet essence of coconut. Customize it with whipped cream and toasted coconut flakes.",
-        "photo": ""
+        "photo": "https://i.postimg.cc/256KtRrP/2.png"
     }
 ]

@@ -24,7 +24,7 @@ async function run() {
 
     app.get("/", (req, res) =>
       res.send("<h1><center>Hello from server</center></h1>")
-    );
+    ); 
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });

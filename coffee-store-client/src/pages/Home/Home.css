@@ -1,0 +1,20 @@
+.logo-container {
+  background: url("https://i.ibb.co/gJYt5GB/15.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-container {
+  background: url("https://i.ibb.co/JKcMJWg/3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.coffees-container {
+  background-image: url("https://i.ibb.co/gd6dj6k/4.png"),
+    url("https://i.ibb.co/WPfp4FB/5.png");
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+}
