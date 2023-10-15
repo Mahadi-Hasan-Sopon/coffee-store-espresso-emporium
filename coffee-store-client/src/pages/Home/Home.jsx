@@ -1,8 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import "./Home.css";
 import { FaCoffee } from "react-icons/fa";
 import { useState } from "react";
 import CoffeeCard from "../../components/CoffeeCard/CoffeeCard";
+import Footer from "../../components/Footer/Footer";
+import Logo from "../../components/Logo/Logo";
 
 function Home() {
   const loadedCoffees = useLoaderData();
@@ -18,16 +20,7 @@ function Home() {
 
   return (
     <div className="home">
-      <div className="logo-container px-4 md:px-10 flex justify-center items-center gap-4 py-4 w-full max-h-[10vh]">
-        <img
-          className="w-16"
-          src={"https://i.ibb.co/Btsrkg5/logo1.png"}
-          alt="logo"
-        />
-        <h1 className="text-3xl md:text-6xl font-normal font-rancho text-white text-center">
-          Espresso Emporium
-        </h1>
-      </div>
+      <Logo />
       <header className="hero-container h-[90vh] flex items-center">
         <div className="content px-4 md:px-10 md:w-full lg:w-1/2 ms-auto">
           <h1 className="text-5xl font-normal font-rancho text-white">
@@ -44,7 +37,7 @@ function Home() {
         </div>
       </header>
 
-      <div className="features px-4 md:px-10 grid justify-center gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:justify-between mx-auto py-14 bg-[#ECEAE3]">
+      <div className="features mb-8 lg:mb-16 px-4 md:px-10 grid justify-center gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:justify-between mx-auto py-14 bg-[#ECEAE3]">
         <div className="feature1 flex flex-col gap-2 max-w-[300px]">
           <img className="w-20" src="https://i.ibb.co/VtysWqj/1.png" alt="" />
           <h2 className="text-3xl font-rancho text-[#331A15]">Awesome Aroma</h2>
@@ -77,7 +70,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="coffeeCards-container my-28 relative bg-white min-h-screen">
+      <div className="coffeeCards-container py-6 md:py-10 lg:py-16 relative bg-white min-h-screen">
         <div className="flex flex-col justify-center items-center gap-2">
           <p className="text-lg text-[#1B1A1A] text-center">
             --- Sip & Savor ---
@@ -86,23 +79,80 @@ function Home() {
             Our Popular Products
           </h1>
           <div className="addCoffee mt-3">
-            <button
-              className="flex justify-center gap-2 px-5 py-2 items-center font-normal text-xl font-rancho bg-[#E3B577] border-2 border-[#331A15]"
-              type="button"
-            >
-              <span className="text-white"> Add Coffee</span>
-              <FaCoffee className="text-[#331a15cb]" />
-            </button>
+            <Link to="/coffees/new">
+              <button
+                className="flex justify-center gap-2 px-5 py-2 items-center font-normal text-xl font-rancho bg-[#E3B577] border-2 border-[#331A15]"
+                type="button"
+              >
+                <span className="text-white"> Add Coffee</span>
+                <FaCoffee className="text-[#331a15cb]" />
+              </button>
+            </Link>
           </div>
         </div>
 
         {/* dynamic data */}
-        <div className="coffeeCards grid md:grid-cols-2 xl:grid-cols-3 gap-6 my-12 px-4 lg:px-6">
+        <div className="coffeeCards grid md:grid-cols-2 gap-6 my-12 px-4 lg:px-10 xl:px-60 2xl:px-72">
           {coffeeCards.map((coffee) => (
-            <CoffeeCard key={coffee.id} coffee={coffee} handleDelete={handleDeleteClick} />
+            <CoffeeCard
+              key={coffee.id}
+              coffee={coffee}
+              handleDelete={handleDeleteClick}
+            />
           ))}
         </div>
       </div>
+      <div className="follow-us py-6 md:py-10 lg:py-16 ">
+        <p className="text-xl text-center text-[#1B1A1A]">Follow Us Now</p>
+        <h1 className="text-6xl font-normal font-rancho text-[#331A15] text-center">
+          Follow on Instagram
+        </h1>
+
+        <div className="photos grid items-center justify-center grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-12 px-4 lg:px-10 xl:px-60 2xl:px-72">
+          <img
+            className="w-full"
+            src="https://i.ibb.co/KDbY4Nd/Rectangle-9.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/rw5tkZv/Rectangle-10.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/XZqx07Z/Rectangle-11.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/DpPRxK0/Rectangle-12.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/dMRyVtx/Rectangle-13.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/rcFr8PL/Rectangle-14.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/RY0TwgX/Rectangle-15.png"
+            alt=""
+          />
+          <img
+            className="w-full"
+            src="https://i.ibb.co/5cV4Nc7/Rectangle-16.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

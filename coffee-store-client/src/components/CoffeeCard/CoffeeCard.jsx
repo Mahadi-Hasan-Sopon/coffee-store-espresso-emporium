@@ -5,12 +5,13 @@ import { MdDelete } from "react-icons/md";
 function CoffeeCard({ coffee, handleDelete }) {
   const { id, name, chef, price, photo } = coffee;
 
+
   return (
-    <div className="flex justify-between gap-3 items-center p-6 bg-[#F5F4F1] rounded-lg">
-      <div className="photo flex-1 lg:flex-none">
+    <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-between gap-3 items-center p-6 bg-[#F5F4F1] rounded-lg">
+      <div className="photo md:flex-1">
         <img src={photo} alt={name} />
       </div>
-      <div className="content mr-3">
+      <div className="content mr-3 md:flex-1">
         <h4 className="text-lg font-normal">
           <span className="text-[#1B1A1A] font-semibold">Name: </span>
           <span className="text-[#5C5B5B]">{name} </span>
@@ -25,7 +26,7 @@ function CoffeeCard({ coffee, handleDelete }) {
         </h4>
       </div>
 
-      <div className="actions flex flex-col gap-4">
+      <div className="actions flex sm:flex-col justify-center items-center gap-4">
         <button className="details p-2.5 bg-amber-300">
           <FaEye className="text-white" />
         </button>
