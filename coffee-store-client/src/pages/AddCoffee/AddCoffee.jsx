@@ -32,13 +32,16 @@ function AddCoffee() {
     };
     // console.log(coffee);
 
-    fetch("http://localhost:4545/coffees/new", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(coffee),
-    })
+    fetch(
+      "https://coffee-store-espresso-exporium-backend-ro4my39q4.vercel.app/coffees/new",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(coffee),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

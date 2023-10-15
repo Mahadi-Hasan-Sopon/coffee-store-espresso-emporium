@@ -1,3 +1,0 @@
-PORT=4545
-
-MONGO_URI="mongodb+srv://<username: mahadih137>:<password>@cluster0.luzpdwj.mongodb.net/?retryWrites=true&w=majority"

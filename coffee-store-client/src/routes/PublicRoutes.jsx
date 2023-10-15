@@ -15,7 +15,10 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:4545/coffees"),
+        loader: () =>
+          fetch(
+            "https://coffee-store-espresso-exporium-backend-ro4my39q4.vercel.app/coffees"
+          ),
       },
       {
         path: "/coffees/new",
@@ -25,13 +28,17 @@ const routes = createBrowserRouter([
         path: "/coffees/update/:coffeeId",
         element: <UpdateCoffee />,
         loader: ({ params }) =>
-          fetch(`http://localhost:4545/coffees/${params.coffeeId}`),
+          fetch(
+            `https://coffee-store-espresso-exporium-backend-ro4my39q4.vercel.app/coffees/${params.coffeeId}`
+          ),
       },
       {
         path: "/coffees/details/:coffeeId",
         element: <CoffeeDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:4545/coffees/${params.coffeeId}`),
+          fetch(
+            `https://coffee-store-espresso-exporium-backend-ro4my39q4.vercel.app/coffees/${params.coffeeId}`
+          ),
       },
     ],
   },

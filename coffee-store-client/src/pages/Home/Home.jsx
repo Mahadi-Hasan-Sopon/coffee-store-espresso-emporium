@@ -22,7 +22,7 @@ function Home() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4545/coffees/${id}`, {
+        fetch(`https://coffee-store-espresso-exporium-backend-ro4my39q4.vercel.app/coffees/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
