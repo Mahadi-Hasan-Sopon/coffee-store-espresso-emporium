@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
 import CoffeeForm from "../../components/CoffeeForm/CoffeeForm";
 import Logo from "../../components/Logo/Logo";
-import { BsArrowLeft } from "react-icons/bs";
+import BackToHome from "../../utils/BackToHome";
+import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 function AddCoffee() {
+  useEffect(() => {
+    window.scroll({ top: 120 });
+  }, []);
+
   const createCoffee = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -25,22 +30,30 @@ function AddCoffee() {
       photo,
       price,
     };
-    console.log(coffee);
+    // console.log(coffee);
+
+    fetch("http://localhost:4545/coffees/new", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(coffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged == true) {
+          console.log("data inserted successfully");
+          Swal.fire("Success!", "Coffee added!", "success");
+        }
+      });
   };
 
   return (
     <div>
       <Logo />
       <div className="go-home my-12 mx-6 lg:mx-10 xl:mx-60 2xl:mx-72">
-        <Link to="/">
-          <button
-            className="text-slaty text-3xl font-rancho flex items-center gap-2"
-            type="button"
-          >
-            <BsArrowLeft />
-            Back to home
-          </button>
-        </Link>
+        <BackToHome />
       </div>
       <div className="addCoffee bg-[#F4F3F0] my-12 px-6 lg:mx-10 xl:mx-60 2xl:mx-72 py-16 md:px-24 space-y-8">
         <h1 className="text-5xl font-normal font-rancho text-slaty text-center">

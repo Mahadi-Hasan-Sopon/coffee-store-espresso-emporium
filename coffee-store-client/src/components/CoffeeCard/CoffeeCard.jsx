@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { FaEye, FaPen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function CoffeeCard({ coffee, handleDelete }) {
-  const { id, name, chef, price, photo } = coffee;
-
+  const { _id, name, chef, price, photo } = coffee;
 
   return (
     <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-between gap-3 items-center p-6 bg-[#F5F4F1] rounded-lg">
@@ -27,14 +27,18 @@ function CoffeeCard({ coffee, handleDelete }) {
       </div>
 
       <div className="actions flex sm:flex-col justify-center items-center gap-4">
-        <button className="details p-2.5 bg-amber-300">
-          <FaEye className="text-white" />
-        </button>
-        <button className="details p-2.5 bg-slate-800">
-          <FaPen className="text-white" />
-        </button>
+        <Link to={`/coffees/details/${_id}`}>
+          <button className="details p-2.5 bg-amber-300">
+            <FaEye className="text-white" />
+          </button>
+        </Link>
+        <Link to={`/coffees/update/${coffee._id}`}>
+          <button className="details p-2.5 bg-slate-800">
+            <FaPen className="text-white" />
+          </button>
+        </Link>
         <button
-          onClick={() => handleDelete(id)}
+          onClick={() => handleDelete(_id)}
           className="details p-2.5 bg-red-600"
         >
           <MdDelete className="text-white" />

@@ -33,6 +33,13 @@ async function run() {
       res.send(coffees);
     });
 
+    app.get("/coffees/:coffeeId", async (req, res) => {
+      const id = req.params.coffeeId;
+      const query = { _id: new ObjectId(id) };
+      const result = await coffeeCollection.findOne(query);
+      res.send(result);
+    });
+
     app.post("/coffees/new", async (req, res) => {
       const coffee = req.body;
       const result = await coffeeCollection.insertOne(coffee);
@@ -40,7 +47,7 @@ async function run() {
       console.log(`A document was inserted with the _id: ${result.insertedId}`);
     });
 
-    app.put("/coffees/:id", async (req, res) => {
+    app.put("/coffees/update/:id", async (req, res) => {
       const id = req.params.id;
       const coffee = req.body;
       const filter = { _id: new ObjectId(id) };
@@ -58,6 +65,7 @@ async function run() {
       console.log(
         `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`
       );
+      res.send(result);
     });
 
     app.delete("/coffees/:id", async (req, res) => {

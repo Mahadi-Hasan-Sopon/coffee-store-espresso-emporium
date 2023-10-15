@@ -3,8 +3,8 @@ import "./Home.css";
 import { FaCoffee } from "react-icons/fa";
 import { useState } from "react";
 import CoffeeCard from "../../components/CoffeeCard/CoffeeCard";
-import Footer from "../../components/Footer/Footer";
 import Logo from "../../components/Logo/Logo";
+import Swal from "sweetalert2";
 
 function Home() {
   const loadedCoffees = useLoaderData();
@@ -12,10 +12,32 @@ function Home() {
   const [coffeeCards, setCoffeeCards] = useState(loadedCoffees);
 
   const handleDeleteClick = (id) => {
-    const remainingCoffeeCards = coffeeCards.filter(
-      (coffee) => coffee.id !== id
-    );
-    setCoffeeCards(remainingCoffeeCards);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:4545/coffees/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              const remainingCoffeeCards = coffeeCards.filter(
+                (coffee) => coffee._id !== id
+              );
+              setCoffeeCards(remainingCoffeeCards);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -95,7 +117,7 @@ function Home() {
         <div className="coffeeCards grid md:grid-cols-2 gap-6 my-12 px-4 lg:px-10 xl:px-60 2xl:px-72">
           {coffeeCards.map((coffee) => (
             <CoffeeCard
-              key={coffee.id}
+              key={coffee._id}
               coffee={coffee}
               handleDelete={handleDeleteClick}
             />
@@ -152,7 +174,6 @@ function Home() {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 }
