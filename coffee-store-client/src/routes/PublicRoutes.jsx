@@ -16,9 +16,7 @@ const routes = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: () =>
-          fetch(
-            "https://coffee-store-espresso-emporium-q3048eiqt-mahadi-hasan-sopon.vercel.app/coffees"
-          ),
+          fetch("https://coffee-store-espresso-emporium.vercel.app/coffees"),
       },
       {
         path: "/coffees/new",
@@ -29,7 +27,7 @@ const routes = createBrowserRouter([
         element: <UpdateCoffee />,
         loader: ({ params }) =>
           fetch(
-            `https://coffee-store-espresso-emporium-q3048eiqt-mahadi-hasan-sopon.vercel.app/coffees/${params.coffeeId}`
+            `https://coffee-store-espresso-emporium.vercel.app/coffees/${params.coffeeId}`
           ),
       },
       {
@@ -37,7 +35,7 @@ const routes = createBrowserRouter([
         element: <CoffeeDetails />,
         loader: ({ params }) =>
           fetch(
-            `https://coffee-store-espresso-emporium-q3048eiqt-mahadi-hasan-sopon.vercel.app/coffees/${params.coffeeId}`
+            `https://coffee-store-espresso-emporium.vercel.app/coffees/${params.coffeeId}`
           ),
       },
     ],

@@ -23,7 +23,7 @@ function Home() {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://coffee-store-espresso-emporium-q3048eiqt-mahadi-hasan-sopon.vercel.app/coffees/${id}`,
+          `https://coffee-store-espresso-emporium.vercel.app/coffees/${id}`,
           {
             method: "DELETE",
           }
