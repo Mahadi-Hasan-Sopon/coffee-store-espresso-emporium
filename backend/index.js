@@ -7,7 +7,11 @@ require("dotenv").config();
 const app = express();
 
 // middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://coffee-store-espresso-emporium.surge.sh/",
+  })
+);
 app.use(express.json());
 
 const port = process.env.PORT || 5000;
@@ -23,10 +27,6 @@ async function run() {
     const coffeeCollection = client.db("coffeesDB").collection("coffees");
 
     //   routes
-
-    app.get("/", (req, res) =>
-      res.send("<h1><center>Hello from server</center></h1>")
-    );
 
     app.get("/coffees", async (req, res) => {
       const coffees = await coffeeCollection.find().toArray();
@@ -89,6 +89,10 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
+app.get("/", (req, res) =>
+  res.send("<h1><center>Hello from server</center></h1>")
+);
 
 app.listen(port, () =>
   console.log(`server running on Port: ${port}. Visit-- localhost:${port}`)
