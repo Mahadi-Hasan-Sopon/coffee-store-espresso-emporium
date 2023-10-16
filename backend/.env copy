@@ -1,0 +1,4 @@
+PORT=9999
+
+MONGO_USER=mahadih137
+MONGO_PASS=<password>

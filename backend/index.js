@@ -7,15 +7,20 @@ require("dotenv").config();
 const app = express();
 
 // middlewares
-app.use(
-  cors({
-    origin: "https://coffee-store-espresso-emporium.surge.sh/",
-  })
-);
+app.use(cors());
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://coffee-store-espresso-emporium.surge.sh"
+  );
+  // Add other CORS headers as needed.
+  next();
+});
+
 const port = process.env.PORT || 5000;
-const uri = process.env.MONGO_URI;
+const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.luzpdwj.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri);
