@@ -11,11 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://coffee-store-espresso-emporium.surge.sh"
-  );
-  // Add other CORS headers as needed.
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
 
@@ -27,7 +25,7 @@ const client = new MongoClient(uri);
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const coffeeCollection = client.db("coffeesDB").collection("coffees");
 
